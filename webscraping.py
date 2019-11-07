@@ -4,7 +4,6 @@ Created on Fri Nov  1 17:01:55 2019
 
 @author: Cerys
 """
-#import useful libraries
 from selenium import webdriver
 import pandas as pd
 import time
