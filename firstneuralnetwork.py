@@ -39,11 +39,6 @@ def augment_data(data,size,xpix,ypix):
             else: training_set[i*len(angles)+j,:,:] = rotate(data[i,:,:], angles[j], reshape=False)
     return training_set
 
-agn_data = get_clipped_images(agn_path,83,83,sigma=3)
-ps_data = get_clipped_images(ps_path,83,83,sigma=1)
-agn_augment = augment_data(agn_data, 10000,83,83)
-ps_augment = augment_data(ps_data, 10000,83,83)
-
 def train_test(data,percentage):
     d = np.concatenate(data,axis=0)
     n_images = len(d)
@@ -59,6 +54,11 @@ def train_test(data,percentage):
     test = (d[n_train:], labels[n_train:])
     return train, test
      
+agn_data = get_clipped_images(agn_path,83,83,sigma=3)
+ps_data = get_clipped_images(ps_path,83,83,sigma=1)
+agn_augment = augment_data(agn_data, 10000,83,83)
+ps_augment = augment_data(ps_data, 10000,83,83)
+
 data = (agn_augment,ps_augment)
 train, test = train_test(data,0.8)
 
