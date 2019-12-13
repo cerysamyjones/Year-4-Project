@@ -2,7 +2,7 @@
 
 "Detecting And Classifying Radio Galaxies Using Convolution Neural Networks With Synthetic Training sets"
 
-# Description of Repository Contents: 
+## Description of Repository Contents: 
 
 1. FITS file / image manipulation
 -> Examples of the basic functionality of reading and manipulating FITS files / images. The key examples for this project being; sigma clipping the images to remove the background, and rotating the images for training set augmentation.
